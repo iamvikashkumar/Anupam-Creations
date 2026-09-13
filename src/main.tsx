@@ -11,8 +11,8 @@ if (!rootElement) {
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
+  <BrowserRouter basename="/anupam-creations">      
+    <App />
     </BrowserRouter>
   </React.StrictMode>,
 );
