@@ -8,8 +8,8 @@
 export const businessInfo = {
   name: 'Anupam Creations',
   tagline: 'Tailoring • Alteration • Customisation',
-  whatsappNumber: '910000000000', // TODO: replace with real WhatsApp number (country code + number, no + or spaces)
-  areaServed: 'Your apartment community', // TODO: replace with real locality name
+  whatsappNumber: '+918310934361', // TODO: replace with real WhatsApp number (country code + number, no + or spaces)
+  areaServed: 'Janapriya Heavens', // TODO: replace with real locality name
   hours: 'Mon–Sat, 10 AM – 7 PM',
 };
 
