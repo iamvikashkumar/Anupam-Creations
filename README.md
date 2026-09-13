@@ -9,10 +9,10 @@ phone.
 
 ## Status
 
-This repo is being built in phases (see project plan). Currently
-complete: **Phase 1 (architecture)** and **Phase 2 (project setup)**.
-The public site, auth, and admin features are placeholders until their
-respective phases land.
+This repo is being built in phases (see project plan). Currently complete:
+**Phase 1 (architecture)**, **Phase 2 (project setup)**, the public site,
+and **Phase 4A (admin foundation)**. Customer, order, payment, photo, PDF,
+and settings workflows are being added in later phases.
 
 ## Stack
 
@@ -42,7 +42,9 @@ browser's mobile device emulator (360–430px width is the target).
    (Anupam's login) — customers never get accounts.
 3. Enable **Cloud Firestore** in production mode.
 4. Copy the web app config into `.env.local` (see `.env.example`).
-5. Deploy the security rules once they're added in Phase 14:
+5. Seed the admin user's Firestore document at `users/{uid}` with
+   `{ "role": "admin" }` using the UID from Firebase Authentication.
+6. Deploy the security rules:
    `firebase deploy --only firestore:rules`
 
 No Firebase Storage is used — cloth photos are never uploaded; they

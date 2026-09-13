@@ -46,7 +46,7 @@ export default function NavBar() {
         </button>
 
         {/* Desktop nav */}
-        <nav className="hidden gap-8 sm:flex">
+        <nav className="hidden items-center gap-8 sm:flex">
           {links.map((link) => (
             <NavLink
               key={link.to}
@@ -60,6 +60,9 @@ export default function NavBar() {
               {link.label}
             </NavLink>
           ))}
+          <Link to="/login" className="btn-primary px-4 py-2 text-sm">
+            Admin Login
+          </Link>
         </nav>
       </div>
 
@@ -80,6 +83,13 @@ export default function NavBar() {
               {link.label}
             </NavLink>
           ))}
+          <Link
+            to="/login"
+            onClick={() => setOpen(false)}
+            className="btn-primary mt-2 w-full"
+          >
+            Admin Login
+          </Link>
         </nav>
       )}
     </header>

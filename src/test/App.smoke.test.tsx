@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from '@/app/App';
 
@@ -24,12 +24,15 @@ describe('App shell', () => {
     expect(screen.getByRole('heading', { level: 1, name: /our services/i })).toBeInTheDocument();
   });
 
-  it('renders the admin placeholder at /admin', () => {
+  it('redirects unauthenticated visitors from /admin to login', async () => {
     render(
       <MemoryRouter initialEntries={['/admin']}>
         <App />
       </MemoryRouter>,
     );
-    expect(screen.getByRole('heading', { level: 1, name: /admin/i })).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByRole('heading', { level: 1, name: /anupam creations/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /login/i })).toBeInTheDocument();
+    });
   });
 });

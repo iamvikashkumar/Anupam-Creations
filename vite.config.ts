@@ -57,7 +57,7 @@ export default defineConfig({
         // Order data is never cached offline.
         globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
 
-        navigateFallbackDenylist: [/^\/admin/],
+        navigateFallbackDenylist: [/^\/Anupam-Creations\/admin(?:\/|$)/, /^\/admin(?:\/|$)/],
       },
     }),
   ],
