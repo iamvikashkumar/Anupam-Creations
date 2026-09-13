@@ -9,7 +9,7 @@ import path from 'path';
 
 export default defineConfig({
   // IMPORTANT for GitHub Pages
-  base: '/anupam-creations/',
+  base: '/Anupam-Creations/',
 
   plugins: [
     react(),
@@ -36,7 +36,7 @@ export default defineConfig({
         orientation: 'portrait',
 
         // IMPORTANT for GitHub Pages
-        start_url: '/anupam-creations/',
+        start_url: '/Anupam-Creations/',
 
         icons: [
           {

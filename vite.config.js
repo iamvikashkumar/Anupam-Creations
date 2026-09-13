@@ -6,7 +6,7 @@ import path from 'path';
 // Anupam Creations — mobile-first PWA for a single-user tailoring business.
 export default defineConfig({
     // IMPORTANT for GitHub Pages
-    base: '/anupam-creations/',
+    base: '/Anupam-Creations/',
     plugins: [
         react(),
         VitePWA({
@@ -24,7 +24,7 @@ export default defineConfig({
                 display: 'standalone',
                 orientation: 'portrait',
                 // IMPORTANT for GitHub Pages
-                start_url: '/anupam-creations/',
+                start_url: '/Anupam-Creations/',
                 icons: [
                     {
                         src: 'icons/icon-192.png',
