@@ -10,6 +10,12 @@ import DashboardPage from '@/pages/admin/DashboardPage';
 import AdminLayout from '@/app/components/AdminLayout';
 import ProtectedRoute from '@/app/components/ProtectedRoute';
 import { AuthProvider } from '@/app/auth/AuthProvider';
+import CustomerListPage from '@/pages/admin/CustomerListPage';
+import CustomerFormPage from '@/pages/admin/CustomerFormPage';
+import CustomerDetailsPage from '@/pages/admin/CustomerDetailsPage';
+import OrderFormPage from '@/pages/admin/OrderFormPage';
+import OrderListPage from '@/pages/admin/OrderListPage';
+import OrderDetailsPage from '@/pages/admin/OrderDetailsPage';
 
 /**
  * Route shell for Anupam Creations.
@@ -37,8 +43,13 @@ export default function App() {
           }
         >
           <Route index element={<DashboardPage />} />
-          <Route path="orders/*" element={<PlaceholderAdminPage />} />
-          <Route path="customers/*" element={<PlaceholderAdminPage />} />
+          <Route path="orders" element={<OrderListPage />} />
+          <Route path="orders/new" element={<OrderFormPage />} />
+          <Route path="orders/:orderId" element={<OrderDetailsPage />} />
+          <Route path="customers" element={<CustomerListPage />} />
+          <Route path="customers/new" element={<CustomerFormPage />} />
+          <Route path="customers/:customerId" element={<CustomerDetailsPage />} />
+          <Route path="customers/:customerId/edit" element={<CustomerFormPage />} />
           <Route path="payments" element={<PlaceholderAdminPage />} />
           <Route path="services" element={<PlaceholderAdminPage />} />
           <Route path="settings" element={<PlaceholderAdminPage />} />

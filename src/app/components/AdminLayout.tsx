@@ -5,8 +5,8 @@ const navigation = [
   { to: '/admin', label: 'Dashboard', end: true },
   { to: '/admin/orders', label: 'Orders' },
   { to: '/admin/customers', label: 'Customers' },
-  { to: '/admin/payments', label: 'Payments' },
-  { to: '/admin/settings', label: 'Settings' },
+//   { to: '/admin/payments', label: 'Payments' },
+//   { to: '/admin/settings', label: 'Settings' },
 ];
 
 export default function AdminLayout() {
