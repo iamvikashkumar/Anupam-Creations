@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Prevents iOS/Android auto-zoom on input focus at common form font sizes */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  /* Visible keyboard focus everywhere — never rely on color alone */
+  :focus-visible {
+    outline: 3px solid theme('colors.marigold.DEFAULT');
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Hero entrance — the site's one deliberate motion moment. Staggered via
+   inline animation-delay on each element; everything else on the site
+   is static or only responds to direct interaction (tap/hover). */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 0.6s ease-out both;
+}
+
+@keyframes stitch-draw {
+  from {
+    stroke-dashoffset: 220;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.stitch-line path {
+  stroke-dasharray: 6 8;
+  stroke-dashoffset: 220;
+  animation: stitch-draw 1.4s ease-out 0.3s forwards;
+}
+
+/* Soft block-print-inspired dot texture, used sparingly behind the hero.
+   A CSS gradient, not an image — no extra network request, no license. */
+.pattern-dots {
+  background-image: radial-gradient(currentColor 1.4px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+
+@layer components {
+  /* Baseline touch-friendly primary button, used across the admin app */
+  .btn-primary {
+    @apply min-h-touch min-w-touch inline-flex items-center justify-center rounded-card bg-maroon px-5 py-3 text-base font-semibold text-paper shadow-card active:bg-maroon-dark disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply min-h-touch min-w-touch inline-flex items-center justify-center rounded-card border-2 border-maroon px-5 py-3 text-base font-semibold text-maroon active:bg-paper-dim disabled:opacity-50;
+  }
+
+  .card {
+    @apply rounded-card bg-white shadow-card;
+  }
+}
